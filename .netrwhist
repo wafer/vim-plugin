@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/luwenfeng/tr761/device/tp-link/mifi/www/CN/international'
+let g:netrw_dirhist_2='/home/luwenfeng/tr761/device/tp-link/mifi/www/CN/dynaform'
+let g:netrw_dirhist_3='/etc/mysql/conf.d'
+let g:netrw_dirhist_4='/home/luwenfeng/tr761/device/tp-link/mifi/cgi-src/system-tool-reboot'
+let g:netrw_dirhist_5='/home/luwenfeng/tr761/kernel/samples'
