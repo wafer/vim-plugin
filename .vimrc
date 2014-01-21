@@ -1,4 +1,5 @@
-colorscheme vc
+"colorscheme vc
+colorscheme desert
 filetype on
 
 syntax on
@@ -11,17 +12,22 @@ set autoindent
 set cindent
 set smartindent
 set nocompatible
-
+set number
 "set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
 filetype plugin indent on
 set completeopt=longest,menu
 
+
 let g:NERDTree_title="[NERDTree]"
-let g:winManagerWindowLayout="NERDTree|TagList"
+"let g:winManagerWindowLayout="NERDTree|TagList"
+let g:winManagerWindowLayout="NERDTree"
 let g:winManagerWidth=30
 let g:Tlist_Show_One_File=1
+let g:Tlist_Use_SingleClick = 1
+let g:Tlist_Auto_Open = 1
 let g:Tlist_Exit_OnlyWindow = 1
 let g:Tlist_Use_Right_Window = 1
+let g:Tlist_WinWidth = 25
 let g:OmniCpp_ShowPrototypeInAbbr = 1
 
 function! NERDTree_Start()
