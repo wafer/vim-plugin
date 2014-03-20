@@ -1,34 +1,41 @@
-"colorscheme vc
 colorscheme desert
-filetype on
 
-syntax on
-
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
+set nu
 set autoindent
-set cindent
-set smartindent
-set nocompatible
-set number
-"set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
-filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set mouse=a
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+Bundle 'bronson/vim-trailing-whitespace'
+
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+
+set cscopequickfix=s-,c-,d-,i-,t-,e-
 set completeopt=longest,menu
 
+set nocp
+filetype plugin on
 
 let g:NERDTree_title="[NERDTree]"
-"let g:winManagerWindowLayout="NERDTree|TagList"
 let g:winManagerWindowLayout="NERDTree"
-let g:winManagerWidth=30
 let g:Tlist_Show_One_File=1
 let g:Tlist_Use_SingleClick = 1
 let g:Tlist_Auto_Open = 1
 let g:Tlist_Exit_OnlyWindow = 1
 let g:Tlist_Use_Right_Window = 1
-let g:Tlist_WinWidth = 25
-let g:OmniCpp_ShowPrototypeInAbbr = 1
+let g:Tlist_WinWidth = 30
+let g:SuperTabDefaultCompletionType="context"
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1
+let g:miniBufExplMoreThanOne=0
+
 
 function! NERDTree_Start()
     exec 'NERDTree'
@@ -39,13 +46,15 @@ function! NERDTree_IsValid()
 endfunction
 
 nmap <F9> :WMToggle<CR>
-noremap <silent> <F8> :BufExplorer<CR>
 
-"vim_smooth_scroll
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+function! <SID>ToggleWindowsManager()
+    if IsWinManagerVisible()
+        call s:CloseWindowsManager()
+    else
+        call s:StartWindowsManager()
+   	    exe 'q'
+    end
+endfunction
 
 if has("cscope")
      set csprg=/usr/local/bin/cscope
